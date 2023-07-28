@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:group_button/group_button.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:medcentral/pages/tabs/dashboard.dart';
+import 'package:medcentral/pages/main_screen.dart';
 import '../utilities/button.dart';
 
 class UserDetails extends StatefulWidget {
@@ -15,6 +17,7 @@ TextEditingController emailcontroller =TextEditingController();
 TextEditingController agecontroller =TextEditingController();
 TextEditingController heightcontroller =TextEditingController();
 GroupButtonController gendercontroller =GroupButtonController();
+String selectedgender = "Male";
 List<String>gender = ["Male","Female","Others"];
 class _UserDetailsState extends State<UserDetails> {
   @override
@@ -49,6 +52,7 @@ class _UserDetailsState extends State<UserDetails> {
                 child: Container(
                   margin: EdgeInsets.symmetric(vertical: 0, horizontal: 50),
                   child: SingleChildScrollView(
+                    
                     physics: PageScrollPhysics(),
                     child: Column(
                       children: [
@@ -221,9 +225,23 @@ class _UserDetailsState extends State<UserDetails> {
               InkWell(
                 splashColor: Colors.blue.shade50,
                 onTap: () {
-                  print(gendercontroller);
+                  setState(() {
+                    if(gendercontroller.selectedIndex == 0)
+                    {
+                      selectedgender="Male";
+                    }
+                    if(gendercontroller.selectedIndex == 1)
+                    {
+                      selectedgender="Female";
+                    }
+                    if(gendercontroller.selectedIndex == 2)
+                    {
+                      selectedgender="Others";
+                    }
+                  });
+                  print(selectedgender);
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => UserDetails()));
+                      MaterialPageRoute(builder: (context) => MainScreen()));
                 },
                 child: const BlueButton(
                   text: "Save and Continue",

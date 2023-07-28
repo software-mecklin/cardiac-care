@@ -34,7 +34,7 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Stack(
           children: [
             Container(
-              child: Image.asset("assets/images/splashbackground.png"),
+              child: Image.asset("assets/images/splashbackgroung.png"),
             ),
             SafeArea(
               child: SingleChildScrollView(

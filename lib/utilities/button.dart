@@ -101,3 +101,57 @@ class BlueButton extends StatelessWidget {
     );
   }
 }
+
+class TestButton extends StatelessWidget {
+  final text;
+  const TestButton({super.key, @required this.text});
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 64,
+      width: MediaQuery.of(context).size.width - 60,
+      decoration: BoxDecoration(
+        color: HexColor("#37C9EE"),
+        borderRadius: BorderRadius.circular(8),
+        border: Border.all(
+            color: HexColor("#37C9EE"), style: BorderStyle.solid, width: 2),
+      ),
+      child: Center(
+        child: Text(
+          text,
+          style: GoogleFonts.lato(
+              fontSize: 17,
+              fontWeight: FontWeight.w500,
+              color: Colors.black),
+        ),
+      ),
+    );
+  }
+}
+
+class GoHomeButton extends StatelessWidget {
+  final text;
+  const GoHomeButton({super.key, @required this.text});
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 64,
+      width: MediaQuery.of(context).size.width - 60,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(8),
+        border: Border.all(
+            color: Colors.black, style: BorderStyle.solid, width: 1),
+      ),
+      child: Center(
+        child: Text(
+          text,
+          style: GoogleFonts.lato(
+              fontSize: 17,
+              fontWeight: FontWeight.w500,
+              color: Colors.black),
+        ),
+      ),
+    );
+  }
+}
