@@ -47,47 +47,50 @@ class _MainScreenState extends State<MainScreen> {
           AboutScreen(),
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar(
+      bottomNavigationBar: SizedBox(
 
-        enableFeedback: true,
-        elevation: 0,
-        type: BottomNavigationBarType.fixed,
+        child: BottomNavigationBar(
 
-        selectedIconTheme: IconThemeData(
-          color: HexColor("#37C9EE"),
+          enableFeedback: true,
+          elevation: 0,
+          type: BottomNavigationBarType.fixed,
+
+          selectedIconTheme: IconThemeData(
+            color: HexColor("#37C9EE"),
+          ),
+          unselectedItemColor: HexColor("#2E2D32"),
+          iconSize: 30,
+
+          unselectedLabelStyle : GoogleFonts.lato(fontSize: 11,fontWeight: FontWeight.w800,color: Colors.black),
+          selectedLabelStyle : GoogleFonts.lato(fontSize: 11,fontWeight: FontWeight.w800,color: HexColor("#37C9EE",)),
+
+          onTap: (index){
+            setState(() {
+              _selectedIndex = index;
+              _onItemTapped(index);
+            });
+
+          },
+          currentIndex: _selectedIndex,
+          items: const[
+            BottomNavigationBarItem(icon: Padding(
+              padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+              child: ImageIcon(AssetImage("assets/images/homeoutlined.png")),
+            ),label: "Home"),
+            BottomNavigationBarItem(icon: Padding(
+              padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+              child: ImageIcon(AssetImage("assets/images/reportsicon.png")),
+            ),label: "Reports"),
+            BottomNavigationBarItem(icon: Padding(
+              padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+              child: ImageIcon(AssetImage("assets/images/settingsicon.png")),
+            ),label: "Settings"),
+            BottomNavigationBarItem(icon: Padding(
+              padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+              child: ImageIcon(AssetImage("assets/images/abouticon.png")),
+            ),label: "About"),
+        ],
         ),
-        unselectedItemColor: HexColor("#2E2D32"),
-        iconSize: 30,
-
-        unselectedLabelStyle : GoogleFonts.lato(fontSize: 11,fontWeight: FontWeight.w800,color: Colors.black),
-        selectedLabelStyle : GoogleFonts.lato(fontSize: 11,fontWeight: FontWeight.w800,color: HexColor("#37C9EE",)),
-
-        onTap: (index){
-          setState(() {
-            _selectedIndex = index;
-            _onItemTapped(index);
-          });
-
-        },
-        currentIndex: _selectedIndex,
-        items: const[
-          BottomNavigationBarItem(icon: Padding(
-            padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
-            child: ImageIcon(AssetImage("assets/images/homeoutlined.png")),
-          ),label: "Home"),
-          BottomNavigationBarItem(icon: Padding(
-            padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
-            child: ImageIcon(AssetImage("assets/images/reportsicon.png")),
-          ),label: "Reports"),
-          BottomNavigationBarItem(icon: Padding(
-            padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
-            child: ImageIcon(AssetImage("assets/images/settingsicon.png")),
-          ),label: "Settings"),
-          BottomNavigationBarItem(icon: Padding(
-            padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
-            child: ImageIcon(AssetImage("assets/images/abouticon.png")),
-          ),label: "About"),
-      ],
       ),
     );
   }
