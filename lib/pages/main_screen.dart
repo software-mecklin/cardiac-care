@@ -71,10 +71,22 @@ class _MainScreenState extends State<MainScreen> {
         },
         currentIndex: _selectedIndex,
         items: const[
-          BottomNavigationBarItem(icon: Icon(Icons.home_outlined),label: "Home"),
-          BottomNavigationBarItem(icon: Icon(Icons.file_copy_outlined),label: "Reports"),
-          BottomNavigationBarItem(icon: Icon(Icons.settings_outlined),label: "Settings"),
-          BottomNavigationBarItem(icon: Icon(Icons.info_outline),label: "About"),
+          BottomNavigationBarItem(icon: Padding(
+            padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+            child: ImageIcon(AssetImage("assets/images/homeoutlined.png")),
+          ),label: "Home"),
+          BottomNavigationBarItem(icon: Padding(
+            padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+            child: ImageIcon(AssetImage("assets/images/reportsicon.png")),
+          ),label: "Reports"),
+          BottomNavigationBarItem(icon: Padding(
+            padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+            child: ImageIcon(AssetImage("assets/images/settingsicon.png")),
+          ),label: "Settings"),
+          BottomNavigationBarItem(icon: Padding(
+            padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+            child: ImageIcon(AssetImage("assets/images/abouticon.png")),
+          ),label: "About"),
       ],
       ),
     );
