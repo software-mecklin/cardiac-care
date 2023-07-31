@@ -40,7 +40,7 @@ class _ClinicalECGState extends State<ClinicalECG> {
                 height: 30,
               ),
               Container(
-                height: 450,
+                height: MediaQuery.of(context).size.height / 2,
                 width: MediaQuery.of(context).size.width - 60,
                 decoration: BoxDecoration(
                     border: Border.all(
@@ -50,54 +50,57 @@ class _ClinicalECGState extends State<ClinicalECG> {
                     color: Colors.white),
                 child: Padding(
                   padding: const EdgeInsets.all(15.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Description",
-                        style: GoogleFonts.lato(
-                            fontWeight: FontWeight.w900,
-                            fontSize: 17,
-                            color: HexColor("#37C9EE")),
-                      ),
-                      SizedBox(height: 10,),
-                      Text("The ECG test is a non-invasive and painless\nprocedure that can provide important\ninformation about the function and\nhealth of the heart. ",style: GoogleFonts.lato(fontSize: 16,fontWeight: FontWeight.w400),
-                      ),
-                      SizedBox(height: 20,),
-                      Text(
-                        "Time Duration",
-                        style: GoogleFonts.lato(
-                            fontWeight: FontWeight.w900,
-                            fontSize: 17,
-                            color: HexColor("#37C9EE")),
-                      ),
-                      SizedBox(height: 5,),
-                      Text("120 Sec",style: GoogleFonts.lato(fontSize: 16,fontWeight: FontWeight.w400),
+                  child: SingleChildScrollView(
+                    physics: PageScrollPhysics(),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Description",
+                          style: GoogleFonts.lato(
+                              fontWeight: FontWeight.w900,
+                              fontSize: 17,
+                              color: HexColor("#37C9EE")),
+                        ),
+                        SizedBox(height: 10,),
+                        Text("The ECG test is a non-invasive and painless\nprocedure that can provide important\ninformation about the function and\nhealth of the heart. ",style: GoogleFonts.lato(fontSize: 16,fontWeight: FontWeight.w400),
+                        ),
+                        SizedBox(height: 20,),
+                        Text(
+                          "Time Duration",
+                          style: GoogleFonts.lato(
+                              fontWeight: FontWeight.w900,
+                              fontSize: 17,
+                              color: HexColor("#37C9EE")),
+                        ),
+                        SizedBox(height: 5,),
+                        Text("120 Sec",style: GoogleFonts.lato(fontSize: 16,fontWeight: FontWeight.w400),
 
-                      ),
-                      SizedBox(height: 20,),
-                      Text(
-                        "Test Areas",
-                        style: GoogleFonts.lato(
-                            fontWeight: FontWeight.w900,
-                            fontSize: 17,
-                            color: HexColor("#37C9EE")),
-                      ),
-                      SizedBox(height: 5,),
-                      Text("Heart \nMuscles",style: GoogleFonts.lato(fontSize: 16,fontWeight: FontWeight.w400),
-                      ),
-                      SizedBox(height: 20,),
-                      Text(
-                        "Test Text",
-                        style: GoogleFonts.lato(
-                            fontWeight: FontWeight.w900,
-                            fontSize: 17,
-                            color: HexColor("#37C9EE")),
-                      ),
-                      SizedBox(height: 5,),
-                      Text("Text 1 \nText 2",style: GoogleFonts.lato(fontSize: 16,fontWeight: FontWeight.w400),
-                      ),
-                    ],
+                        ),
+                        SizedBox(height: 20,),
+                        Text(
+                          "Test Areas",
+                          style: GoogleFonts.lato(
+                              fontWeight: FontWeight.w900,
+                              fontSize: 17,
+                              color: HexColor("#37C9EE")),
+                        ),
+                        SizedBox(height: 5,),
+                        Text("Heart \nMuscles",style: GoogleFonts.lato(fontSize: 16,fontWeight: FontWeight.w400),
+                        ),
+                        SizedBox(height: 20,),
+                        Text(
+                          "Test Text",
+                          style: GoogleFonts.lato(
+                              fontWeight: FontWeight.w900,
+                              fontSize: 17,
+                              color: HexColor("#37C9EE")),
+                        ),
+                        SizedBox(height: 5,),
+                        Text("Text 1 \nText 2",style: GoogleFonts.lato(fontSize: 16,fontWeight: FontWeight.w400),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
