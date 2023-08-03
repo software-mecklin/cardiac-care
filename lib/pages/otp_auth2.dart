@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
@@ -14,6 +15,7 @@ class OTP extends StatefulWidget {
 }
 TextEditingController otpcontroller = TextEditingController();
 class _OTPState extends State<OTP> {
+  final FirebaseAuth auth =FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -140,9 +142,17 @@ class _OTPState extends State<OTP> {
               ),
               InkWell(
                 splashColor: Colors.blue.shade50,
-                onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => UserDetails()));
+                onTap: () async {
+                  try{
+                    PhoneAuthCredential credential = PhoneAuthProvider.credential(verificationId: GetStarted.verify, smsCode: otpcontroller.text);
+                    // Sign the user in (or link) with the credential
+                    await auth.signInWithCredential(credential);
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => UserDetails()));
+                  }catch(e){
+                    print("Wrong OTP");
+                  }
+
                 },
                 child: const BlueButton(
                   text: "Submit and Proceed",

@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
@@ -7,6 +8,8 @@ import 'otp_auth2.dart';
 
 class GetStarted extends StatefulWidget {
   const GetStarted({super.key});
+
+  static String verify ="";
 
   @override
   State<GetStarted> createState() => _GetStartedState();
@@ -84,9 +87,40 @@ class _GetStartedState extends State<GetStarted> {
           ),
           InkWell(
             splashColor: Colors.blue.shade50,
-            onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => OTP()));
+            onTap: () async {
+
+              await FirebaseAuth.instance.verifyPhoneNumber(
+                phoneNumber: '+91'+phonecontroller.text,
+                verificationCompleted: (PhoneAuthCredential credential) {},
+                verificationFailed: (FirebaseAuthException e) {
+                  if (e.code == 'invalid-phone-number') {
+                    AlertDialog(
+                      title: const Text('Invalid Phone Number'),
+                      content: const SingleChildScrollView(
+                        child: ListBody(
+                          children: <Widget>[
+                            Text('Enter correct Phone number'),
+                          ],
+                        ),
+                      ),
+                      actions: <Widget>[
+                        TextButton(
+                          child: const Text('Cancel'),
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                        ),
+                      ],
+                    );
+                  }
+                },
+                codeSent: (String verificationId, int? resendToken) {
+                  GetStarted.verify = verificationId;
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => OTP()));
+                },
+                codeAutoRetrievalTimeout: (String verificationId) {},
+              );
             },
             child: const BlueButton(
               text: "Send OTP",

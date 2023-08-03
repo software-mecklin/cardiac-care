@@ -1,0 +1,83 @@
+{
+  "project_info": {
+    "project_number": "940102453608",
+    "firebase_url": "https://elementals-b304-default-rtdb.firebaseio.com",
+    "project_id": "elementals-b304",
+    "storage_bucket": "elementals-b304.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:940102453608:android:d5ef09f80829066fea2edd",
+        "android_client_info": {
+          "package_name": "com.example.medcentral"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "940102453608-ot170njq4v7jibreirgji755j1d17dga.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsPmlz-Xs7Y02viwyPW94avNLevCqxuho"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "940102453608-ot170njq4v7jibreirgji755j1d17dga.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "940102453608-3a6610ajvlbd3e8gadduc532jpcqtp3l.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.inc.Elemental"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:940102453608:android:9d3a0b64b5f9d8b7ea2edd",
+        "android_client_info": {
+          "package_name": "com.inc.elemental"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "940102453608-ot170njq4v7jibreirgji755j1d17dga.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsPmlz-Xs7Y02viwyPW94avNLevCqxuho"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "940102453608-ot170njq4v7jibreirgji755j1d17dga.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "940102453608-3a6610ajvlbd3e8gadduc532jpcqtp3l.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.inc.Elemental"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

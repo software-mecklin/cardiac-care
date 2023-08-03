@@ -7,6 +7,7 @@ import 'package:medcentral/pages/tabs/about_screen.dart';
 import 'package:medcentral/pages/tabs/dashboard.dart';
 import 'package:medcentral/pages/tabs/report_screen.dart';
 import 'package:medcentral/pages/tabs/settings_screen.dart';
+
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
 
