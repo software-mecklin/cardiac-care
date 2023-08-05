@@ -213,7 +213,7 @@ class _UserDetailsState extends State<UserDetails> {
                                 fontWeight: FontWeight.w400,
                                 color: HexColor("#2E2D32")),
                             border: OutlineInputBorder(),
-                            labelText: 'Enter your height',
+                            labelText: 'Enter your height (in ft)',
                           ),
                         ),
                         SizedBox(height: 50,)
@@ -225,6 +225,9 @@ class _UserDetailsState extends State<UserDetails> {
               InkWell(
                 splashColor: Colors.blue.shade50,
                 onTap: () {
+                  showDialog(context: context, builder: (context){
+                    return Center(child: CircularProgressIndicator());
+                  });
                   setState(() {
                     if(gendercontroller.selectedIndex == 0)
                     {

@@ -94,7 +94,11 @@ class _OTPState extends State<OTP> {
                             ),
                             SizedBox(width: 5,),
                             InkWell(
-                              onTap: (){},
+                              enableFeedback: true,
+
+                              onTap: (){
+                                
+                              },
                               child: Text(
                                 "Resend",
                                 style: GoogleFonts.lato(
@@ -143,15 +147,42 @@ class _OTPState extends State<OTP> {
               InkWell(
                 splashColor: Colors.blue.shade50,
                 onTap: () async {
+                  showDialog(context: context, builder: (context){
+                    return Center(child: CircularProgressIndicator());
+                  });
                   try{
                     PhoneAuthCredential credential = PhoneAuthProvider.credential(verificationId: GetStarted.verify, smsCode: otpcontroller.text);
                     // Sign the user in (or link) with the credential
                     await auth.signInWithCredential(credential);
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => UserDetails()));
-                  }catch(e){
-                    print("Wrong OTP");
                   }
+                  catch(e)
+                  {
+                    showDialog(context: context, builder: (context)
+                    {
+                      return AlertDialog(
+                        title: const Text('Invalid OTP',
+                          style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
+                        content: const SingleChildScrollView(
+                          child: ListBody(
+                            children: <Widget>[
+                              Text('Please enter correct OTP'),
+                            ],
+                          ),
+                        ),
+                        actions: <Widget>[
+                          TextButton(
+                            child: const Text('Re-Enter'),
+                            onPressed: () {
+
+                              Navigator.of(context).pop();
+                            },
+                          ),
+                        ],
+                      );
+                    });
+                  };
 
                 },
                 child: const BlueButton(

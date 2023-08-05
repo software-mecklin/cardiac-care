@@ -6,7 +6,7 @@ class SkipButton extends StatelessWidget {
   const SkipButton({super.key});
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Ink(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
         border: Border.all(
@@ -30,7 +30,7 @@ class NextButton extends StatelessWidget {
   const NextButton({super.key});
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Ink(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
         border: Border.all(
@@ -55,7 +55,7 @@ class backButton extends StatelessWidget {
   const backButton({super.key});
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Ink(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
         border: Border.all(
@@ -80,7 +80,7 @@ class BlueButton extends StatelessWidget {
   const BlueButton({super.key, @required this.text});
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Ink(
       height: 64,
       width: 300,
       decoration: BoxDecoration(
