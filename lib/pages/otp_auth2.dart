@@ -95,9 +95,47 @@ class _OTPState extends State<OTP> {
                             SizedBox(width: 5,),
                             InkWell(
                               enableFeedback: true,
+                              onTap: () async {
 
-                              onTap: (){
-                                
+                                await FirebaseAuth.instance.verifyPhoneNumber(
+                                  phoneNumber: '+91' + phonecontroller.text,
+                                  verificationCompleted: (PhoneAuthCredential credential) {},
+                                  verificationFailed: (FirebaseAuthException e) {
+                                    showDialog(
+                                      context: context,
+                                      builder: (context) {
+                                        return AlertDialog(
+                                          title: const Text(
+                                            'Invalid Phone Number',
+                                            style: TextStyle(
+                                                fontSize: 16, fontWeight: FontWeight.bold),
+                                          ),
+                                          content: const SingleChildScrollView(
+                                            child: ListBody(
+                                              children: <Widget>[
+                                                Text('Please enter correct Phone number'),
+                                              ],
+                                            ),
+                                          ),
+                                          actions: <Widget>[
+                                            TextButton(
+                                              child: const Text('Re-Enter'),
+                                              onPressed: () {
+                                                Navigator.of(context).pop();
+                                              },
+                                            ),
+                                          ],
+                                        );
+                                      },
+                                    );
+                                  },
+                                  codeSent: (String verificationId, int? resendToken) {
+                                    GetStarted.verify = verificationId;
+                                    Navigator.push(
+                                        context, MaterialPageRoute(builder: (context) => OTP()));
+                                  },
+                                  codeAutoRetrievalTimeout: (String verificationId) {},
+                                );
                               },
                               child: Text(
                                 "Resend",
