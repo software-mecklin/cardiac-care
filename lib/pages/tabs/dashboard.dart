@@ -23,9 +23,13 @@ class _DashBoardState extends State<DashBoard> {
 
   @override
   Widget build(BuildContext context) {
-    if (hours >= 0 && hours < 12) {
+    if (hours >= 0 && hours < 4) {
+      greeting = "Good Night";
+    }
+    else if (hours >= 5 && hours < 11) {
       greeting = "Good Morning";
-    } else if (hours >= 12 && hours < 16) {
+    }
+    else if (hours >= 12 && hours < 16) {
       greeting = "Good Afternoon";
     } else if (hours >= 16 && hours < 21) {
       greeting = "Good Evening";
@@ -76,7 +80,7 @@ class _DashBoardState extends State<DashBoard> {
                     splashColor: Colors.blueGrey,
                       onTap: (){
                         Navigator.push(context,
-                        PageTransition(child:ClinicalECG(),type:PageTransitionType.bottomToTop));
+                        PageTransition(child:ClinicalECG(),type:PageTransitionType.fade));
                       },
                       child: DashboardCard(title: "Clinical\nECG Test")),
                   SizedBox(
@@ -86,7 +90,7 @@ class _DashBoardState extends State<DashBoard> {
                       splashColor: Colors.blueGrey,
                       onTap: (){
                         Navigator.push(context,
-                            PageTransition(child:LiveECG(),type:PageTransitionType.bottomToTop));
+                            PageTransition(child:LiveECG(),type:PageTransitionType.fade));
                       },
                       child: DashboardCard(title: "Live\nECG Test")),
                   SizedBox(
@@ -97,7 +101,7 @@ class _DashBoardState extends State<DashBoard> {
                       splashColor: Colors.blueGrey,
                       onTap: (){
                         Navigator.push(context,
-                            PageTransition(child:TreadmillTest(),type:PageTransitionType.bottomToTop));
+                            PageTransition(child:TreadmillTest(),type:PageTransitionType.fade));
                       },
                       child: DashboardCard(title: "Treadmill\nTest")),
                 ],

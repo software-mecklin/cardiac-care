@@ -117,7 +117,7 @@ class _ClinicalECGState extends State<ClinicalECG> {
                         context,
                         PageTransition(
                             child: MainScreen(),
-                            type: PageTransitionType.topToBottom));
+                            type: PageTransitionType.fade));
                   },
                   child: GoHomeButton(text: "Go to Home"))
             ]),
