@@ -97,7 +97,7 @@ class _GetStartedState extends State<GetStarted> {
                   builder: (context) {
                     return Center(child: CircularProgressIndicator());
                   });
-
+              await FirebaseAuth.instance.setSettings(appVerificationDisabledForTesting: true);
               await FirebaseAuth.instance.verifyPhoneNumber(
                 phoneNumber: '+91' + phonecontroller.text,
                 verificationCompleted: (PhoneAuthCredential credential) {},
