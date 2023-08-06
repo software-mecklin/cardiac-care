@@ -1,6 +1,8 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:medcentral/utilities/button.dart';
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});
@@ -18,6 +20,7 @@ class SettingsPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
 
               children: [
+                SizedBox(height: 40,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -111,6 +114,12 @@ class SettingsPage extends StatelessWidget {
 
                   IconButton(onPressed: (){}, icon: Icon(Icons.arrow_forward_ios_outlined)),
                 ],),
+                SizedBox(height: 40,),
+                InkWell(
+                    onTap: (){
+                      FirebaseAuth.instance.signOut();
+                    },
+                    child: BlueButton(text: "Log Out"))
 
             ],),
           ),

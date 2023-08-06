@@ -102,6 +102,7 @@ class _GetStartedState extends State<GetStarted> {
                 phoneNumber: '+91' + phonecontroller.text,
                 verificationCompleted: (PhoneAuthCredential credential) {},
                 verificationFailed: (FirebaseAuthException e) {
+                  print(e.code);
                   showDialog(
                     context: context,
                     builder: (context) {
