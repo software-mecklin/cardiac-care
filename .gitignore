@@ -1,4 +1,5 @@
 # Miscellaneous
+*.env
 *.class
 *.log
 *.pyc
@@ -30,7 +31,6 @@ migrate_working_dir/
 .packages
 .pub-cache/
 .pub/
-.env/
 /build/
 
 # Symbolication related
