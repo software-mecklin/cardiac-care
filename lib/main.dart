@@ -4,6 +4,7 @@ import 'package:medcentral/pages/splash_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
+
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await dotenv.load(fileName: ".env");
@@ -17,10 +18,12 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+
     var primaryColor = HexColor("#37C9EE");
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'MedCentral',
       theme: ThemeData(
         colorScheme: ColorScheme.light(primary: primaryColor),
         useMaterial3: true,

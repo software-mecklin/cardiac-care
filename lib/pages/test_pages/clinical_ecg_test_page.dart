@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:medcentral/communication.dart';
 import 'package:medcentral/pages/main_screen.dart';
 import 'package:medcentral/utilities/button.dart';
 import 'package:page_transition/page_transition.dart';
@@ -107,7 +108,15 @@ class _ClinicalECGState extends State<ClinicalECG> {
               SizedBox(
                 height: 30,
               ),
-              TestButton(text: "Start Test"),
+              InkWell(
+                  splashColor: Colors.blue.shade50,
+                  onTap: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) =>  Communication()),
+                    );
+                  },
+                  child: TestButton(text: "Start Test")),
               SizedBox(
                 height: 30,
               ),

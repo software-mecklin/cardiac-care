@@ -1,0 +1,8 @@
+version: "Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)"
+options: "9224ca15bb56f7dab1729d38328092299299fcf5c2eac946869987ced383a044"
+build_start_time: [1691864043, 708101000]
+build_end_time: [1691864051, 555908000]
+inputs:
+  "/Volumes/Samsung T7/medcentral/android/macos/Flutter/GeneratedPluginRegistrant.swift": [1691864014, 246881957]
+  "/Volumes/Samsung T7/medcentral/android/macos/Runner/AppDelegate.swift": [1657744731, 0]
+  "/Volumes/Samsung T7/medcentral/android/macos/Runner/MainFlutterWindow.swift": [1687105358, 468399139]
